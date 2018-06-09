@@ -1,0 +1,19 @@
+henne.nu {
+    gzip
+    ext .html .php
+    root /www/henne.nu/
+
+    proxy /api http://localhost:8080
+
+    log /www/logs/access.log
+    errors /www/logs/error.log
+
+    mime {
+        .json application/json
+    }
+
+    tls {
+        dns cloudflare
+    }
+    realip cloudflare
+}
